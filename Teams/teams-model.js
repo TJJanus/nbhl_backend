@@ -9,4 +9,9 @@ function findTeamById(id) {
     .where({ id }).first()
 }
 
-module.exports = { findTeams, findTeamById }
+function findByDivision(id) {
+    return db('nbhl-teams')
+    .where({divisionId: id})
+}
+
+module.exports = { findTeams, findTeamById, findByDivision }

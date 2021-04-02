@@ -34,4 +34,15 @@ router.get('/:id', (req, res) => {
     })
 })
 
+router.get('/division/:id', (req, res) => {
+    Teams.findByDivision(req.params.id)
+    .then(data => {
+        res.status(200).json(data)
+    })
+    .catch(error => {
+        console.log(error)
+    })
+
+})
+
 module.exports = router;

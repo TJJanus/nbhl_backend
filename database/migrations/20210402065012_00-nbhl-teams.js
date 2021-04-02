@@ -2,6 +2,7 @@
 exports.up = function(knex) {
   return knex.schema.createTable('nbhl-teams', (tbl) => {
       tbl.increments()
+      tbl.integer('divisionId')
       tbl.string('name')
       tbl.string('teamName')
       tbl.string('city')
